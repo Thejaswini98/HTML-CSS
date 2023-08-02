@@ -4,6 +4,7 @@
   /* To remove the extra spaces between elements in webpage */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* PAGE SECTION */
@@ -15,7 +16,7 @@ body {
   position: relative;
 }
 .container {
-  width: 700px;
+  width: 1200px;
   /*margin-left: auto;
   margin-right: auto;*/
   margin: 0 auto;
@@ -26,7 +27,7 @@ body {
   padding-left: 40px;
   padding-right: 40px; */
   padding: 20px 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   /* height: 80px; */
 }
 nav {
@@ -34,7 +35,7 @@ nav {
   text-align: center;
 }
 article {
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 .post-header {
   margin-bottom: 40px;
@@ -46,8 +47,7 @@ aside {
   /* Padding */
   /* padding-top: 50px;
   padding-bottom: 50px; */
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
 }
 /* SMALLER ELEMENTS */
 h1,
@@ -71,6 +71,7 @@ h3 {
   font-size: 30px;
   margin-bottom: 20px;
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 h4 {
@@ -118,6 +119,7 @@ li:last-child {
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
 li:first-child {
@@ -150,7 +152,7 @@ a:active {
 /* LVHA */
 
 .post-img {
-  width: 50%;
+  width: 100%;
   height: auto;
 }
 /* TYPES OF BOXES */
@@ -160,7 +162,7 @@ nav a:link {
   padding: 20px;
   display: block; */
   margin-right: 30px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   display: inline-block;
 }
 nav a:link:last-child {
@@ -215,3 +217,133 @@ h2::after {
 footer p {
   color: green;
 } */
+/* FLOATS */
+/* .author-img {
+  float: left;
+} */
+
+/*
+.author {
+  /* padding-left: 80px; */
+/* float: left;
+  margin-top: 10px;
+  margin-left: 20px; */
+/* } */
+
+/* h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+article {
+  width: 825px;
+  float: left;
+}
+
+aside {
+  width: 300px;
+  float: right;
+}
+
+footer {
+  clear: both;
+} */
+
+/* FLEX-BOX */
+/* h1 and nav are both inside main-header */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.Related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* FLEXBOX LAYOUT */
+/* .row {
+  display: flex;
+  gap: 75px;
+  margin-bottom: 0;
+  /* because by default the elements stretch down to the length of the longer element */
+/* align-items: flex-start;
+}
+
+article { */
+/* Instead of using below flex property to figure out width we can use flex: 1*/
+/* flex: 0 0 825px; 
+  flex: 1;
+}
+
+aside {
+  /* DEFAULTS */
+/* flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto; 
+  flex: 0 0 300px;
+} */
+
+/* CSS GRID LAYOUT */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header {
+  /* grid-column: 1 / span 2; */
+  /* We can write above as this as well */
+  grid-column: 1 / -1;
+}
+
+article {
+}
+
+aside {
+}
+
+footer {
+  grid-template-columns: 1 / -1;
+}
